@@ -1,0 +1,52 @@
+include ../list-item/list-item
+include ../button/button
+
+mixin levels()
+	+b.levels
+		.container
+			-
+				var levels = ['Новичок', 'Опытный', 'Профессионал'];
+				var paragraphs = [
+					'определение ЦА проекта',
+					'умение структурировать видеоигры по содержанию контента и механикам. понимание, как строится бизнес-модель в игровой индустрии',
+					'декомпозиция игрового процесса через психологические паттерны'
+				];
+
+			.levels__heading
+				.levels__title
+					h3
+						|С КАКИМ УРОВНЕМ
+						|НУЖНО НА МАРАФОН?
+
+				.levels__about
+					h4
+						|Программист Python создаёт быстрые и безопасные
+						|сайты на одном из популярнейшихязыков программирования (он в 5
+
+			.levels__main
+				.levels__description
+
+					each paragraph, index in paragraphs
+						div.levels__description-item(class=index===2?'thin':'')
+							+list-item(paragraph)
+
+					each paragraph, index in paragraphs
+						div.levels__description-item(class=index===2?'thin':'')
+							+list-item(paragraph)
+
+					.levels__be-logo
+						img(src="assets/images/be-logo.png", alt="")
+						
+					+button('Узнай своё призвание')
+
+				.levels__visual
+					each level, index in levels
+						.levels__image(id="levels__image-"+(index+1))
+							img(src="assets/images/level-"+(index+1)+".png", alt="")
+							p #{level}
+
+					.levels__work
+						img(src="assets/images/pyg-circle.png", alt="" class="levels__pyg")
+						img(src="assets/images/laptop.png", alt="" class="levels__laptop")
+
+	

@@ -1,0 +1,15 @@
+mixin format-price(price, places)
+	+b.format-price
+		.format-price__title
+			h3 Стоимость
+
+		.format-price__main
+			.format-price__info
+
+				p.format-price__price
+					| #{price} &#8381;
+
+				p.format-price__places
+					| / Осталось мест: #{places}
+
+			p.format-price__howToPay Оплата частями по рассрочке

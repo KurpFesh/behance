@@ -1,0 +1,24 @@
+include ../button/button
+include ../nav/nav
+
+mixin header()
+	+b.header
+		.container
+			+nav()
+			img(src="assets/header-dollar.png", alt="" class="header__dollar")
+			.header__main
+				.header__proposition 
+					h3 «Зацепите» своей работой
+				.header__about
+					h4
+						| Программист Python создаёт быстрые и безопасные
+						| сайты на одном из популярнейшихязыков программирования (он в 5
+			.header__title
+				h1 Bēhance
+				h2 Взгляд изнутри.
+			
+			+button('Узнай своё призвание')
+
+			.header__folder
+				img(src="assets/images/smile.png", alt="" class="header__smile-image")
+				img(src="assets/images/folder.png", alt="" class="header__folder-image")

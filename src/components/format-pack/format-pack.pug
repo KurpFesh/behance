@@ -1,0 +1,25 @@
+include ../button/button
+include ../list-item/list-item
+include ../format-price/format-price
+
+mixin format-pack(pack, styled, small)
+	+b.format-pack
+		.format-pack__title
+			h3 Пакет #{pack.title}
+
+		.format-pack__subtitle
+			h4 #{pack.subtitle}
+
+		.format-pack__description
+			p.format-pack__video-collections 3 видеоколлекции на темы:
+
+			.format-pack__video-collection
+				each video in pack.videos
+					+list-item(video, styled, small)
+
+			.format-pack__other
+				each item in pack.other
+					p.format-pack__other-item #{item}
+
+			+format-price(pack.price, pack.placesLeft)
+			+button('Хочу записаться')

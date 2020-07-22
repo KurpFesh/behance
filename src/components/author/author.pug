@@ -1,0 +1,42 @@
+include ../author-slider/author-slider
+
+mixin author()
+	+b.author
+		.container
+			.author__heading
+				.author__title
+					h3 АВТОР И ТРЕНЕР МАРАФОНА
+
+				.author__about
+					h4
+						|Программист Python создаёт быстрые и безопасные 
+						|сайты на одном из популярнейшихязыков программирования (он в 5
+
+			.author__main
+				.author__projects
+					.author__see-all
+						img(src="assets/images/author-arrow.png", alt="" class="author__arrow")
+						img(src="assets/images/be-logo.png", alt="" class="author__be-logo")
+						.author__profile
+							h4 Посмотреть все работы
+							p переходи на профиль
+
+
+					.author__card
+						img(src="assets/images/card.png", alt="")
+				
+				.author__demo
+					+author-slider()
+					.author__youtube
+						a(href="/" class="author__youtube-logo")
+							img(src="assets/images/youtube-logo.png", alt="")
+
+						p.author__subscribe
+							|Посмотри работы и
+							|<span>подпишись на <a href='/'>наш канал</a><span>
+
+			.author__description
+				p elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni
+				p elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerciam, 
+				p quis nostrud exerci
+			

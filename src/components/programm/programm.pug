@@ -1,0 +1,35 @@
+include ../button/button
+
+mixin programm()
+	+b.programm
+		.container
+			.programm__inner
+				-
+					var before = ['www.pyg.com', 'basketball', '@pygsport'];
+					var after = ['the year? 2020', 'pyg 20th street ny', 'now'];
+
+				.programm__heading
+					.programm__line.programm__line--before
+						each beforeItem in before
+							span #{beforeItem}
+
+					.programm__title
+						h3 Программа занятий марафона
+
+					.programm__line.programm__line--after
+						each afterItem, index in after
+							span(class=index===0?'programm__line-item--line-through':index===2?'programm__line-item--spaced':'')
+								|#{afterItem}
+
+				.programm__main
+					img(src="assets/images/board.png", alt="" class="programm__board")
+					.programm__underline
+						.programm__underline-item.programm__underline-item--start
+							| <span class='programm__underline-text--big'>pyg</span><span class='programm__underline-text--r'>®</span><span class='programm__underline-text--small'>——————9am - 9pm</span>
+						.programm__underline-item.programm__underline-item--end
+							| <span class='programm__underline-text--big'>pyg</span><span class='programm__underline-text--r'>®</span><span class='programm__underline-text--small'>——————9am - 9pm</span>
+
+					+button('Хочу записаться')
+
+
+

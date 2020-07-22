@@ -1,6 +1,21 @@
 extends ../components/layout-default/layout-default
 
+include ../components/header/header
+include ../components/schedule/schedule
+include ../components/levels/levels
+include ../components/author/author
+include ../components/programm/programm
+include ../components/format/format
+include ../components/footer/footer
+
 block head
     - var pageTitle = 'Index Page';
 
 block content
+    +header()
+    +schedule()
+    +levels()
+    +author()
+    +programm()
+    +format()
+    +footer()

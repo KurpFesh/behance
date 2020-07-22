@@ -1,0 +1,10 @@
+include ../schedule-item/schedule-item
+
+mixin schedule()
+	+b.schedule
+		.container
+
+			- var items = [1,2,3,4];
+
+			each item, index in items
+				+schedule-item(index)

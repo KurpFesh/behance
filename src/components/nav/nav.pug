@@ -1,0 +1,29 @@
+mixin nav()
+	+b.nav
+		-
+			var links = {
+				'О нас': '/',
+				'Бесплатные материалы': '/',
+				'Новости': '/',
+			};
+
+			var socials = [
+				{title: 'ВК', image:'assets/images/nav-vk-logo.png', link: '/'},
+				{title: 'WhatsApp', image:'assets/images/nav-wapp-logo.png', link: '/'},
+			];
+		.nav__main
+			a(href="/" class='nav__link')
+				| Все курсы
+
+		.nav__about
+			each link, title in links
+				a(href=link class='nav__link')
+					| #{title}
+
+		.nav__social
+			each social in socials
+				.nav__social-item
+					a(href=social.link)
+						img(src="social.image", alt="" class="nav__social-logo")
+						span.nav__social-title
+							| Написать в #{social.title}

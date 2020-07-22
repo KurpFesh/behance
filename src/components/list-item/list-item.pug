@@ -1,0 +1,17 @@
+mixin list-item(text, styled, small)
+	+b.list-item
+		-
+			var classes = 'list-item__circle'
+			if( styled ) {
+				if(classes.length !== 0) 
+					classes += ' '
+				classes += 'styled'
+			}
+			if( small ) {
+				if(classes.length !== 0) 
+					classes += ' '
+				classes += 'small'
+			}
+		.list-item__circle-wrapper
+			div(class=classes)
+		p.list-item__text #{text}
